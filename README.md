@@ -1,5 +1,4 @@
 # songify
-Simple Web Audio Player 
 
 This project is a simple webpage template for an audio player with dynamic track list.  
 
@@ -30,33 +29,28 @@ This project incudes some simple bash scripting to automate the generation of th
 3. Update the `songs.json` file with your track names (file names minus the `.mp3` extension). 
 4. Edit the `build.env` file, adding your values for `WEB_ROOT_DIR` (the full directory path above your website directory) and `SITE_NAME` (the name of your website / base directory).  Note, if you are not deploying anything / don't have an actual domain, you can just have your site name be `SITE_NAME=songify` to match the name of this cloned directory.  
 
-            ```bash
-            export WEB_ROOT_DIR="/mnt/c/www"
-            export SITE_NAME="www.myawesomewebsite.com"
-            ```
+        export WEB_ROOT_DIR="/mnt/c/www"
+        export SITE_NAME="www.myawesomewebsite.com"
 
 5. Source the `build-functions.sh` file, and use the `generate_songs_json` function to generate the `songs.json` file based on the contents of your `songs/` directory.  
 
-            ```bash 
-            . build-functions.sh
-            generate_songs_json
-            ```
+        . build-functions.sh
+        generate_songs_json
 
 6. If all went well, you should have a `songs.json` reflecting the mp3 files under the `songs/` directory. 
 
-            ```bash 
-            you@LOCAL:/mnt/c/www/songify $ ls -A songs/*.mp3
-            songs/song1.mp3  songs/song2.mp3  songs/song3.mp3
-            you@LOCAL:/mnt/c/www/songify $
-            you@LOCAL:/mnt/c/www/songify $ cat songs.json
-            {
-            "songs": [
-                "song1",
-                "song2",
-                "song3"
-            ]
-            }
-            ```
+        you@LOCAL:/mnt/c/www/songify $ ls -A songs/*.mp3
+        songs/song1.mp3  songs/song2.mp3  songs/song3.mp3
+        you@LOCAL:/mnt/c/www/songify $
+        you@LOCAL:/mnt/c/www/songify $ cat songs.json
+        {
+        "songs": [
+            "song1",
+            "song2",
+            "song3"
+        ]
+        }
+
 
 7. As a result, your site should automatically render the new track list based on this `songs.json` content.  
 
@@ -69,8 +63,7 @@ AWS S3 is a good (and cheap) choice for hosting a static website like this.  If 
 2. Rename your website directory to reflect: `mv songify/ www.myawesomewebplayer.com/`
 3. Change to your `www.myawesomewebplayer.com/` directory, and use the `deploy` function to generate your songs.json and sync everything to AWS S3. 
 
-            ```bash 
-            cd www.myawesomewebplayer.com/
-            . build-functions.sh 
-            deploy 
-            ```
+
+        cd www.myawesomewebplayer.com/
+        . build-functions.sh 
+        deploy 
