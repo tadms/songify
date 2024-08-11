@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songify</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class='fab fa-napster'></i> Songify</h1>
+        <div class="player">
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="player-controls">
+                <button id="prevButton"><i class="fas fa-backward"></i></button>
+                <button id="playPauseButton"><i class="fas fa-play"></i></button>
+                <button id="nextButton"><i class="fas fa-forward"></i></button>
+            </div>
+            <div class="progress-container" id="progressContainer">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+        <div class="track-list">
+            <ul id="trackList">
+                <!-- Tracks will be dynamically populated here -->
+            </ul>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
